@@ -12,7 +12,7 @@ print (people)
 
 # api-endpoint
 URL = "https://api.github.com/user"
-auth=('malbernhe', 'MDQ6VXNlcjM1NjMxNTk0')
+auth=('malbernhe', 'xxx')
 
 # sending get request and saving the response as response object
 r = requests.get(url=URL, auth=auth)
