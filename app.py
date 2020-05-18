@@ -1,44 +1,26 @@
-# app.py - flask api using flask_restful
-#
+# JobIRL - Recommandation RIASEC
+# flask api using flask_restful - Marc@datastrategie -  08/04/2020
+
 # http://localhost:5000/api/jobirl/reco?majeur=I
-# http://localhost:5000/api/jobirl/reco?majeur=C
+# http://localhost:5000/api/jobirl/reco?majeur=I&mineur=C
 
 #import wrapper_local as wrapper
-import wrapper as wrapper
+#import wrapper as wrapper
 import recommand
 from flask import Flask, request, jsonify
-#from flask_restful import Resource, Api
-import time
-
-RIASEC_majeur = ''
-RIASEC_mineur = ''
 
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/index')
+@app.route('/api/jobirl/info')
 def index():
-    return "Hello, World5"
+    return "API JobIRL - Recommandation RIASEC"
 
-@app.route('/api/jobirl/list', methods=['GET'])
-def list():
+@app.route('/api/jobirl/read', methods=['GET'])
+def read():
+    df = recommand.read()
     return jsonify(status="ok",
-                   result={
-                       "nom": "marc",
-                       "prenom": "boss"})
-
-@app.route('/api/jobirl/init', methods=['GET'])
-def init():
-    result = wrapper.init_data()
-    return jsonify(status="ok",
-                   result=result)
-
-
-@app.route('/api/jobirl/list2', methods=['GET'])
-def list2():
-    result = wrapper.get_data()
-    return jsonify(status="ok",
-                   result=result)
+                   result=df)
 
 @app.route('/api/jobirl/reco', methods=['GET'])
 def reco():

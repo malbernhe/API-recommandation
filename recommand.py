@@ -4,7 +4,15 @@ import json
 
 filename = 'Liste des métiers JobIRL_Avec-RIASEC_V2.csv'
 df = pd.read_csv(filename, sep = ';', encoding='utf-8')
-#print(df.head())
+print(df.head())
+
+def read():
+    try:
+        df = pd.read_csv(filename, sep = ';', encoding='utf-8')
+        #result = df['ROME_PROFESSION_NAME']
+        return True
+    except Exception as e:
+        return False
 
 def reco(RIASEC_majeur, RIASEC_mineur):
     try:
