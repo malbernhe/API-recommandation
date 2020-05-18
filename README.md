@@ -1,8 +1,7 @@
 # API
-https://www.youtube.com/watch?v=E8xvy18YNoM
 
-Projet JobIRL recommandation - 
-Modèle RIASEC
-API sur docker 
+Projet JobIRL
+Moteur de recommandation basé sur le modèle RIASEC
+API flask sur docker 
 
 
