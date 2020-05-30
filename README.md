@@ -1,4 +1,4 @@
-# API recommandation v2
+# API recommandation v3
 
 Moteur de recommandation : l'orientation prédictive ! (plateforme JobIRL.com)
 API flask sur docker - Moteur de recommandation basé sur le modèle RIASEC
