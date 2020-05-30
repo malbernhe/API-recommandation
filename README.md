@@ -59,6 +59,12 @@ Auteur: malbernhe - 08/04/2020
     ENTRYPOINT ["python"]
     CMD ["app.py"]
 
+# requirements.txt
+    flask
+    flask_restful
+    pandas
+    boto3
+
 # app.py
 
     import recommand
