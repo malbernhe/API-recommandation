@@ -47,3 +47,6 @@ Col 52-62 : Ten Item Personality Inventory. Score de 1 à 7.
 10. Conventionnel(le), peu créatif(ve)
 
 / 30+ variables demographiques et de personalité.
+
+# Dockerfile
+
