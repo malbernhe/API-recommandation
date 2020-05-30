@@ -50,3 +50,42 @@ Col 52-62 : Ten Item Personality Inventory. Score de 1 à 7.
 
 # Dockerfile
 
+# Dockerfile - malbernhe - 08/04/2020
+
+FROM python:3.6
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+ENTRYPOINT ["python"]
+CMD ["app.py"]
+
+# app.py
+
+import recommand
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/')
+@app.route('/api/jobirl/info')
+def index():
+    return "API JobIRL - Recommandation RIASEC"
+
+@app.route('/api/jobirl/read', methods=['GET'])
+def read():
+    df = recommand.read()
+    return jsonify(status="ok",
+                   result=df)
+
+@app.route('/api/jobirl/reco', methods=['GET'])
+def reco():
+    RIASEC_majeur = request.args.get('majeur')
+    RIASEC_mineur = request.args.get('mineur')
+
+    result = recommand.reco(RIASEC_majeur, RIASEC_mineur)
+
+    return result
+
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
