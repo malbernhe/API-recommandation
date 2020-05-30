@@ -50,7 +50,7 @@ Col 52-62 : Ten Item Personality Inventory. Score de 1 à 7.
 
 # Dockerfile
 
-# Dockerfile - malbernhe - 08/04/2020
+## malbernhe - 08/04/2020
 
 FROM python:3.6
 COPY . /app
