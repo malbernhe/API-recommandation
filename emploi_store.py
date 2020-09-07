@@ -56,7 +56,7 @@ class Client(object):
                 raise ValueError('Client needs a client ID')
         if not client_secret:
             #client_secret = os.getenv('EMPLOI_STORE_CLIENT_SECRET')
-            client_secret = '77d7260b258c752d5b087a901d9d810d902a371b6b297512de1afe444d7828d4'
+            client_secret = 'xxx'
             if not client_secret:
                 raise ValueError('Client needs a client secret')
         self._client_id = client_id
